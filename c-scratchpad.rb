@@ -46,12 +46,8 @@ Qt::Application.new(ARGV) do
             connect(SIGNAL :clicked) do 
 	    compile(program_source_text.toPlainText(),compiler_options_text.toPlainText())
 	    program_output_text.setPlainText(`./a.out #{program_run_args_text.toPlainText()}` )
-	    #`rm temp.c a.out`
 	  end
         end
- 
-	
-	
  
         self.layout = Qt::VBoxLayout.new do
 	    add_widget(Qt::Label.new('source'))
@@ -62,13 +58,11 @@ Qt::Application.new(ARGV) do
             add_widget(program_run_args_text)
 	    add_widget(Qt::Label.new('output'))
             add_widget(program_output_text)
-            add_widget(button)
-	    
+            add_widget(button)   
         end
-	self.layout.setAlignment(Qt::AlignVCenter)
         show
     end
- 
     exec
 end
 
+`rm temp.c a.out`
