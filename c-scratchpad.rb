@@ -54,17 +54,18 @@ Qt::Application.new(ARGV) do
 	
  
         self.layout = Qt::VBoxLayout.new do
-	    add_widget(Qt::Label.new('source'), 0, Qt::AlignCenter)
-	    add_widget(program_source_text, 0, Qt::AlignCenter)
-	    add_widget(Qt::Label.new('gcc options'), 0, Qt::AlignCenter)
-            add_widget(compiler_options_text, 0, Qt::AlignCenter)
-	    add_widget(Qt::Label.new('Run Arguments'), 0, Qt::AlignCenter)
-            add_widget(program_run_args_text, 0, Qt::AlignCenter)
-	    add_widget(Qt::Label.new('output'), 0, Qt::AlignCenter)
-            add_widget(program_output_text, 0, Qt::AlignCenter)
-            add_widget(button, 0, Qt::AlignCenter)
+	    add_widget(Qt::Label.new('source'))
+	    add_widget(program_source_text)
+	    add_widget(Qt::Label.new('gcc options'))
+            add_widget(compiler_options_text)
+	    add_widget(Qt::Label.new('Run Arguments'))
+            add_widget(program_run_args_text)
+	    add_widget(Qt::Label.new('output'))
+            add_widget(program_output_text)
+            add_widget(button)
+	    
         end
- 
+	self.layout.setAlignment(Qt::AlignVCenter)
         show
     end
  
